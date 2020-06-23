@@ -31,10 +31,10 @@ export default class App extends React.Component {
                 ['light-green', '#8bc34a'], ['orange darken-3', '#ef6c00']
             ];
 
-        if (month === 11 || month === 0 || month === 1)  return [bgImgs[0], bgSolids[0][0], bgSolids[0][1]];
-        if (month === 2  || month === 3 || month === 4)  return [bgImgs[1], bgSolids[1][0], bgSolids[1][1]];
-        if (month === 5  || month === 6 || month === 7)  return [bgImgs[2], bgSolids[2][0], bgSolids[2][1]];
-        if (month === 8  || month === 9 || month === 10) return [bgImgs[3], bgSolids[3][0], bgSolids[3][1]];
+        return month >= 2 && month <= 4 ? [bgImgs[1], bgSolids[1][0], bgSolids[1][1]] :
+            month >= 5 && month <= 7 ? [bgImgs[2], bgSolids[2][0], bgSolids[2][1]]: 
+            month >= 8 && month <= 10 ? [bgImgs[3], bgSolids[3][0], bgSolids[3][1]] :
+            [bgImgs[0], bgSolids[0][0], bgSolids[0][1]];
     };
 
     getWindDirection = deg => {
